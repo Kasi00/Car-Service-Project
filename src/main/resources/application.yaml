@@ -1,0 +1,62 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    url: ${JAVA_COURSE_DB_URL}
+    username: ${JAVA_COURSE_DB_USER}
+    password: ${JAVA_COURSE_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+      change-log: db/changelog/db.changelog-master.yaml
+      default-schema: cars
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+
+jwt:
+  secret-key: ${JAVA_COURSE_JWT_KEY}
+
+aws:
+  s3:
+    bucket-name: ${AWS_S3_BUCKET_NAME}
+    region: ${AWS_S3_REGION}
+    access-key-id: ${AWS_ACCESS_KEY_ID}
+    secret-access-key: ${AWS_SECRET_ACCESS_KEY}
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:
+    org.springframework.web.multipart: DEBUG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
